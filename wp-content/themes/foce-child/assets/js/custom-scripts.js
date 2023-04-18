@@ -39,12 +39,9 @@
     
     };
     
-    $(window).on('load resize scroll', function(e) {
+    $(window).on('load resize scroll', function() {
 
-       e.stopPropagation();
-    
-            //$('.story').find(".title").text( $(this).data("title") );
-    
+            /* We check if the logo is fixed and reached the story section */
             if ($('.story').isInViewportStory() && isFixed) {
                
                 $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
@@ -63,8 +60,6 @@
     });
 
 
-    
-    
     
     $.fn.isInViewport = function () {
         
