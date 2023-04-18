@@ -10,6 +10,7 @@
 
 main {
     background: #fff5e9;
+    position: relative;
     z-index: 99 ;
 }
 
@@ -367,7 +368,9 @@ h2{
 .studio {
 	overflow: hidden !important;
     margin-top: 0px !important;
+    padding-bottom: 20px !important;
     padding-top: 40px !important;
+   
 }
 .studio > .title-h2::before {
 	content: url("./assets/images/random_flower.png") !important;
@@ -399,6 +402,7 @@ h2{
 
 /* Banner */
 .banner{
+
     height: 100vh;
 }
 
@@ -412,6 +416,7 @@ h2{
 .banner img {
 
     position: fixed;
+    min-width: 500px;
 }
 
 
@@ -422,7 +427,9 @@ h2{
     
     }
 
+
 }
+
 
 @keyframes floating-title {
 	0% {
@@ -521,7 +528,7 @@ h2{
 @media (max-width: 792px){
 
     .tinyslider-wrapper{
-        margin-left: -16% !important;
+        margin-left: 5% !important;
     }  
 
 }
@@ -531,7 +538,7 @@ h2{
 
     .tinyslider-wrapper{
         width: 1200px !important;
-        margin-left: 26% !important;
+        margin-left: 5% !important;
     }  
 
 }
@@ -539,21 +546,11 @@ h2{
 @media (max-width: 400px){
 
     .tinyslider-wrapper{
-        margin-left: 30% !important;
+        margin-left: 10% !important;
         width: 900px !important;
     }  
 
 }
-
-
-/*@media (max-width: 350px){
-
-    .tinyslider-wrapper{
-        width: 650px !important;
-    
-    }  
-
-}*/
 
 
 
@@ -610,9 +607,9 @@ h2{
     background-repeat: no-repeat;
     background-position: center;
     padding: 1em 3.8em;	
-    
-    
+     
 }
+
 .oscars > div > .oscars-nomination p {
     color: #FFF5E9;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -624,6 +621,62 @@ h2{
     letter-spacing: -0.02em;
     
 }
+
+@media (max-width: 920px){
+
+    .oscars {
+
+        margin-top: -10em !important;
+
+    }
+    
+    .oscars > div > .oscars-nomination {
+
+        padding: 1em 2.6em;
+
+    }
+
+    .site-footer::after {
+
+        top: 2em;
+
+    }
+
+
+}
+@media (max-width: 730px){
+
+    .oscars > div > .oscars-nomination {
+        
+        padding: 2em 1.5em;
+        width:100% !important;
+
+    }
+
+    .oscars > div > .oscars-nomination p {
+
+        font-size: 35px !important;
+    }    
+
+}
+
+@media (max-width: 600px){
+
+    .oscars > div > .oscars-nomination {
+
+        background-image: none;
+         
+    } 
+    .oscars > div > .oscars-nomination p {
+
+        font-size: 30px !important;
+        color: #333333;
+    }
+
+}
+
+
+
 .oscars > div img {
 	width: 31%;
     max-height: 129px;

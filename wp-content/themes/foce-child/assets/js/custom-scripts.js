@@ -1,13 +1,17 @@
 (function($){
 
-    // Hide section of the home page
-    $('.story, .studio, .banner').hide();
-
     /* When page ready */
     $( document ).ready(function() {
 
         // Fade in section of the home page when page ready
-        $('.story, .studio, .banner').fadeIn(2000);
+        $('.banner').css( {'opacity': 0, 'margin-top': '-100px' } )
+        .animate( { 'opacity': '1', 'margin-top' : 0 }, 1300 );
+
+        $('.banner img').css( {'opacity': 0, 'bottom': '-80px' } )
+        .animate( { 'opacity': '1', 'bottom' : '160px',  }, 1400 );
+
+        $('main').css( {'position': 'relative', 'opacity': 0, 'bottom': '-55px' } )
+        .animate( { 'opacity': '1', 'bottom' : '0px' }, 1400 );
 
 
     });
@@ -38,27 +42,6 @@
         return elementBottom > viewportTop && elementTop < viewportHalf;
     
     };
-    
-    $(window).on('load resize scroll', function() {
-
-            /* We check if the logo is fixed and reached the story section */
-            if ($('.story').isInViewportStory() && isFixed) {
-               
-                $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
-                
-                isFixed = 0;
-
-            } else if ($('.banner  img').isInViewportImage() && !$('.story').isInViewportStory() && !isFixed){
-                
-                $('.banner img').css({'position': 'fixed', 'bottom': '220px'});
-                
-                isFixed = 1;
-
-            } 
-
-    
-    });
-
 
     
     $.fn.isInViewport = function () {
@@ -70,11 +53,34 @@
         let viewportBottom = viewportTop + window.innerHeight; // <-- here
       
         return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
+    }; 
 
-    $(window).on('scroll', function (e) {
 
-        
+    $(window).on('load scroll', function() {
+
+        /* We check if the logo is fixed and reached the story section */
+        if ($('.story').isInViewportStory() && isFixed) {
+               
+            $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
+                
+            isFixed = 0;
+
+        } else if ($('.banner  img').isInViewportImage() && !$('.story').isInViewportStory() && !isFixed){
+                
+            $('.banner img').css({'position': 'fixed', 'bottom': '220px'});
+                
+            isFixed = 1;
+
+        } 
+
+        /* We check if the banner is not in the viewport, if no change the position of image */
+        if(!$('.banner').isInViewport()){
+                
+            $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
+                
+            isFixed = 0;
+        }
+
         /* Check if story title is not shown if not we show it*/
         if (!$('.story').hasClass('show-title')) {
             if ($('.story').isInViewport()) {

@@ -4,7 +4,7 @@ get_header();
 ?>
     <section id="banner" class="banner">
         
-        <video width="1200" height="1000" loop autoplay muted>
+        <video width="1200" height="1000" style="pointer-events: none;" loop autoplay muted>
             <source src="https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4" type="video/mp4">
         </video>
 
@@ -32,26 +32,14 @@ get_header();
 
             );
             $characters_query = new WP_Query($args);
+
+            $characters_query = set_query_var( 'characters_query', $characters_query );
+            
             ?>
-            <article id="characters">
-                <div class="main-character">
-                    <h3>Les personnages</h3>
-  
-                    <div class="tinyslider-wrapper">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                    $characters_query->the_post(); 
 
-                        echo '<div class="tinyslider-slide">';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '</div>';
+            <!-- Display character -->
+            <?php echo get_template_part('parts/character', 'characters_query');?>
 
-                    }
-                    ?>
-                    </div>
-                </div>
-                
-            </article>
             <article id="place" class="place">
                 <div>
                     <h3>Le Lieu</h3>
