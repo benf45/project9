@@ -1,0 +1,655 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+main {
+    background: #fff5e9;
+    z-index: 99 ;
+}
+
+section {
+    background: #fff5e9;
+    z-index: 10 ;
+}
+
+h2{
+	width: 100%;
+    position: relative;
+    background: none !important;
+    font-size: 4.429rem;
+    text-align: center !important;
+}
+
+
+/* Navidation */
+.main-navigation .line {
+	height: 2px;
+	background-color: #000;
+	display: block;
+	margin: auto;
+	width: 30px;
+}
+.main-navigation .line:not(:first-child) {
+
+	margin-block: 6px;
+	
+}
+
+.main-navigation .close-navigation-icon{
+    font-size: 40px !important;
+    margin: -10px 15px 0 0
+}
+
+
+.site-header .menu-toggle {
+
+    position: absolute;
+    right: 0 !important;
+    padding: 0 10px !important;
+    top: 18px !important;
+
+}
+
+.site-header .site-title-mobile {
+
+    display: none;
+
+}
+
+.main-navigation .studio-text-menu{
+
+    font-size: 16px !important;
+    top: 30px !important;
+
+}
+
+.menu-toggle {
+	display: inline;
+    margin-right: 10% !important;
+}
+.main-navigation.toggled ul {
+    background: #fff5e9;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+.main-navigation {
+	height: 60px !important;
+}
+
+.main-navigation ul {
+    display: none;
+}
+
+.main-navigation ul .site-logo-navigation{
+    width: 120px;
+}
+
+.main-navigation > ul li:not(:first-child){
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 14px !important;
+    margin-top: -20px !important;
+}
+.main-navigation > ul li:first-child{
+    margin-top: -110px !important;
+    margin-bottom: 0px !important;
+}
+
+
+.main-navigation ul .site-title {
+	display: block;
+}
+
+.site-header .site-title-navigation {
+
+    display: block;
+    padding: 15px 0 !important;
+    text-align: center;
+    font-weight: 700;
+    
+}
+
+.main-navigation ul li:nth-child(1)::before {
+    content: url("./assets/images/orchid.png");
+    position: absolute;
+    left: -722px;
+     top: 20px;
+}
+.main-navigation ul li:nth-child(1)::after {
+    content: url("./assets/images/Sunflower.png");
+    position: absolute;
+    right: -460px;
+    top: 30px;
+}
+.main-navigation ul li:nth-child(2)::before {
+    content: url("./assets/images/cat.png");
+    position: absolute;
+    left: -300px;
+    top: -85px;
+}
+
+.main-navigation ul li:nth-child(2)::after {
+    content: url("./assets/images/random_flower.png");
+    position: absolute;
+    right: -675px;
+    top: 65px;
+}
+.main-navigation ul li:nth-child(3)::before {
+    content: url("./assets/images/flower.png");
+    position: absolute;
+    left: -330px;
+    top: 40px;
+}
+
+.main-navigation ul li:nth-child(3)::after {
+    content: url("./assets/images/cat-2.png");
+    position: absolute;
+    right: -335px;
+    top: 55px;
+}
+
+.main-navigation ul li:nth-child(4)::before {
+    content: url("./assets/images/cat-1.png");
+    position: absolute;
+    left: -570px;
+    top: 200px;
+}
+
+.main-navigation ul li:nth-child(4)::after {
+    content: url("./assets/images/Hibiscus.png");
+    position: absolute;
+    right: -740px;
+    top: 235px;
+    
+}
+
+.main-navigation li .menu-link:hover {
+    text-shadow: 0px 0px 8px #FF5C00;
+}
+
+@media (max-width: 500px){
+
+    .main-navigation .site-menu .menu-link{
+
+        font-size: 45px !important;
+    
+    }
+
+}
+@media (max-width: 444px){
+
+    .main-navigation .site-title-navigation {
+
+        float: left;
+        margin-left: 10px;
+    
+    }
+    .main-navigation .menu-toggle {
+
+        margin-right: 2px !important;
+    
+    }
+    .main-navigation .site-menu {
+
+        width: 100% !important;
+    
+    }
+
+}
+
+
+/* The animation code of navigation */
+@keyframes animation-flower-menu-li1 {
+
+    from {
+      transform: rotate(0deg) scale(0.9);
+    }
+    to {
+      transform: rotate(360deg) scale(0.9);
+    }
+}
+@keyframes animation-flower-menu-li2 {
+
+    from {
+      transform: rotate(0deg) scale(.3);
+    }
+    to {
+      transform: rotate(360deg) scale(.3);
+    }
+}
+@keyframes animation-flower-menu-li3 {
+
+    from {
+      transform: rotate(0deg) scale(.5);
+    }
+    to {
+      transform: rotate(360deg) scale(.5);
+    }
+}
+@keyframes animation-flower-menu-li4 {
+
+    from {
+      transform: rotate(0deg) scale(2.7);
+    }
+    to {
+      transform: rotate(360deg) scale(2.7);
+    }
+}
+.main-navigation ul li:nth-child(1)::before,
+.main-navigation ul li:nth-child(1)::after,
+.main-navigation ul li:nth-child(2)::after,
+.main-navigation ul li:nth-child(3)::before,
+.main-navigation ul li:nth-child(4)::after {
+    animation-duration: 16s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.main-navigation ul li:nth-child(1)::before,
+.main-navigation ul li:nth-child(1)::after {
+    animation-name: animation-flower-menu-li1 !important;
+
+}
+.main-navigation ul li:nth-child(2)::after {
+    animation-name: animation-flower-menu-li2;
+
+}
+.main-navigation ul li:nth-child(3)::before {
+    animation-name: animation-flower-menu-li3;
+
+}
+
+.main-navigation ul li:nth-child(4)::after {
+    animation-name: animation-flower-menu-li4;
+
+}
+
+
+@keyframes floating-cats {
+	0% {
+		transform: translate(0%,0%) scale(.8);	
+	}
+	25% {
+		transform: translate(3%,9%) scale(.8);	
+	}	
+	50% {
+		transform: translate(8%,4%) scale(.8);	
+	}	
+	75% {
+		transform: translate(0%,9%) scale(.8);	
+	}	
+	100% {
+		transform: translate(0%,0%) scale(.8);
+	}			
+}
+
+.main-navigation ul li:nth-child(2)::before{animation: floating-cats 7s ease-in-out infinite;}
+.main-navigation ul li:nth-child(3)::after{animation: floating-cats 6s ease-in-out infinite;}
+.main-navigation ul li:nth-child(4)::before {animation: floating-cats 5s ease-in-out infinite;}
+
+
+/* Story */
+.story > .title-h2::before {
+	content: url("./assets/images/sunflower_leaves.png");
+	position: absolute;
+	left: 0;
+	top: 8em;
+	z-index: -1;
+}
+.story > .title-h2::after {
+	content: url("./assets/images/Sunflower.png");
+	position: absolute;
+	left: 3.0em;
+	top: 26em;
+}
+
+
+.story__article::before {
+
+	top: 11em !important;
+
+}
+
+.story__article::after {
+
+	top: 5em !important;
+}
+
+/*<-----------------*/
+.title-h2 h2::after,
+.title-h2 h2::before{
+
+    display: none;
+}
+
+.title-h2{
+    
+	background-image: url("./assets/images/purple_title_bg.png");
+    background-color: #FFF5E9;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 1em 2em;
+	margin: 0;
+	background-position: center;
+	
+}
+
+
+@media (max-width: 920px){
+
+    .story > .title-h2::before,
+    .studio > .title-h2::before {
+        display: none;
+    }
+
+    .story > .title-h2::after,
+    .studio > .title-h2::after {
+        display: none;
+    }
+
+}
+/*----------------->*/
+
+/* Studio */
+.studio {
+	overflow: hidden !important;
+    margin-top: 0px !important;
+    padding-top: 40px !important;
+}
+.studio > .title-h2::before {
+	content: url("./assets/images/random_flower.png") !important;
+	position: absolute !important;
+	left: -5em !important;
+	top: 3em !important;
+}
+.studio > .title-h2::after {
+	content: url("./assets/images/flower.png") !important;
+	position: absolute !important;
+	right: 7em !important;
+	top: 5.5em !important;
+}
+.studio > div::before {
+
+	top: 55% !important;
+}
+@media (max-width: 600px){
+    .studio > .title-h2{
+        width: 100% !important;
+        
+    }
+    .studio > .title-h2  h2 {
+        position: relative !important;
+        left: -0.9em !important;
+    }
+    
+}
+
+/* Banner */
+.banner{
+    height: 100vh;
+}
+
+.banner video {
+    width:100%;
+    height: 100%;
+    object-fit: cover !important;
+    
+}
+
+.banner img {
+
+    position: fixed;
+}
+
+
+@media (max-width: 700px){
+
+    .banner video {
+        display: none;
+    
+    }
+
+}
+
+@keyframes floating-title {
+	0% {
+		transform: translate(0%,0%) scale(.8);	
+	}
+	25% {
+		transform: translate(2%,6%) scale(.8);	
+	}	
+	50% {
+		transform: translate(4%,2%) scale(.8);	
+	}	
+	75% {
+		transform: translate(0%,6%) scale(.8);	
+	}	
+	100% {
+		transform: translate(0%,0%) scale(.8);
+	}			
+}
+
+.banner img {animation: floating-title 6s ease-in-out infinite;}
+
+/* Place */
+.clouds {
+    position: relative;
+    top: -350px;
+    
+}
+
+.clouds .small-clouds{
+    
+    position: relative;
+    top: 80px;
+    left: 200px;
+    filter: blur(16.5px);
+}
+
+.clouds .big-clouds{
+    position: relative;
+    filter: blur(16.5px);
+    left: 270px;
+}
+
+@media (max-width: 622px){
+
+    .clouds {
+        display: none !important;
+    }
+
+}
+
+
+/* Character */
+.main-character{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.main-character h3{
+    position: relative;
+    left: -400px !important;
+    
+}
+
+
+.tinyslider-wrapper{
+    width: 2000px !important;
+
+}
+
+  .tinyslider-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+@media (max-width: 1000px){
+
+    .tinyslider-wrapper{
+        width: 1500px !important;
+    
+    } 
+    
+    .main-character h3{
+        left: 0 !important;
+        
+    }
+
+}
+
+@media (max-width: 792px){
+
+    .tinyslider-wrapper{
+        margin-left: -16% !important;
+    }  
+
+}
+
+
+@media (max-width: 600px){
+
+    .tinyslider-wrapper{
+        width: 1200px !important;
+        margin-left: 26% !important;
+    }  
+
+}
+
+@media (max-width: 400px){
+
+    .tinyslider-wrapper{
+        margin-left: 30% !important;
+        width: 900px !important;
+    }  
+
+}
+
+
+/*@media (max-width: 350px){
+
+    .tinyslider-wrapper{
+        width: 650px !important;
+    
+    }  
+
+}*/
+
+
+
+/* The animation code of flowers */
+@keyframes flower {
+
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+.story__article::after,
+.story .title-h2::after,
+.studio .title-h2::before,
+.studio .title-h2::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+    animation-name: flower;
+    animation-duration: 16s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+/* Footer */
+.site-footer {
+    z-index: 99 !important;
+    background: #fff5e9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10em;
+}
+
+.oscars {
+
+	padding-bottom: 250px;   
+}
+
+.oscars > div {
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	width: 76%;
+	margin: auto;
+}
+
+.oscars > div > .oscars-nomination {
+    width: 69%;
+    background-image: url("assets/images/orange_studio.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1em 3.8em;	
+    
+    
+}
+.oscars > div > .oscars-nomination p {
+    color: #FFF5E9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -0.02em;
+    
+}
+.oscars > div img {
+	width: 31%;
+    max-height: 129px;
+    margin-top: 3em;
+}
+.site-footer::before{
+	left: 8em;
+	top: 1.8em;
+    
+}
+.site-footer::after {
+    bottom: 39em;
+    
+}
+
+
+@media (max-width: 920px) {
+
+    .oscars > div > .oscars-nomination {
+        width: 100%;
+       
+    }
+
+    .oscars > div img {
+        width: 80%;
+        margin: auto;
+
+    }
+}
