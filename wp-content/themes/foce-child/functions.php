@@ -29,7 +29,9 @@ function theme_scripts() {
 
 	// Enqueue tiny slider Script
 	wp_enqueue_script( 'theme-tinyslider-script', get_theme_file_uri( '/assets/js/tiny-slider.js' ), array(), null, true );
-	// Enqueue Custom Script
+	// Enqueue Skrollr Script
+	wp_enqueue_script( 'theme-skrollr-script', get_theme_file_uri( '/assets/js/skrollr.min.js' ), array(), null, true );
+    // Enqueue Custom Script
 	wp_enqueue_script( 'theme-custom-script', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), null, true );
 
 

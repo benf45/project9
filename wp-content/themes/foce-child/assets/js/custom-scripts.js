@@ -14,36 +14,23 @@
         .animate( { 'opacity': '1', 'bottom' : '0px' }, 1400 );
 
 
+        //We init Skrollr for the parralax
+        const imageBannerSkrollrData = {
+            "data-0": "opacity:1; position:fixed;bottom: 155px;",
+            "data-228": "",
+            "data-229": "position: absolute; bottom: -65px;",
+            "data-1200": "opacity:0;"
+        };
+        $('.banner img').attr(imageBannerSkrollrData);
+
+        skrollr.init({ 
+            skrollrBody: 'mobile-body' 
+        });
+
     });
     
-    
-    var isFixed = 1;
 
-    $.fn.isInViewportImage = function() {
-
-        var wTop = $(window).scrollTop() + 5;
-        var wBot = wTop + $(window).height();
-        var eTop = $(this).offset().top + 5;
-        var eBot = eTop + $(this).height();
-        return ((eBot <= wBot) && (eTop >= wTop));
-    
-    };
-    
-    $.fn.isInViewportStory = function() {
-
-        var elementTop = $(this).offset().top;
-    
-        var elementBottom = elementTop + $(this).outerHeight() / 1.3;
-    
-        var viewportTop = $(window).scrollTop();
-    
-        var viewportHalf = viewportTop + $(window).height() / 1.3;
-    
-        return elementBottom > viewportTop && elementTop < viewportHalf;
-    
-    };
-
-    
+    /* Function to check if elelment is in the viewport */
     $.fn.isInViewport = function () {
         
         let elementTop = $(this).offset().top;
@@ -56,63 +43,44 @@
     }; 
 
 
+    var storyTitleShowed = 0;
+    var studioTitleShowed = 0;
+    var cloudMoved = 0;
+
     $(window).on('load scroll', function() {
 
-        /* We check if the logo is fixed and reached the story section */
-        if ($('.story').isInViewportStory() && isFixed) {
-               
-            $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
-                
-            isFixed = 0;
-
-        } else if ($('.banner  img').isInViewportImage() && !$('.story').isInViewportStory() && !isFixed){
-                
-            $('.banner img').css({'position': 'fixed', 'bottom': '220px'});
-                
-            isFixed = 1;
-
-        } 
-
-        /* We check if the banner is not in the viewport, if no change the position of image */
-        if(!$('.banner').isInViewport()){
-                
-            $('.banner img').css({'position': 'absolute', 'bottom': '-75px'});
-                
-            isFixed = 0;
-        }
-
         /* Check if story title is not shown if not we show it*/
-        if (!$('.story').hasClass('show-title')) {
+        if (!storyTitleShowed) {
             if ($('.story').isInViewport()) {
             
                 $('.story h2').show().css( {'opacity': 0, 'bottom': '-50px' } )
                 .animate( { 'opacity': '1', 'bottom' : 0 }, 1000 );
 
-                $('.story').addClass('show-title');
+                storyTitleShowed = 1;
            
             }
             
         }
         
         /*Check if studio title is not shown if not we show it */
-        if (!$('.studio').hasClass('show-title')) {
+        if (!studioTitleShowed) {
             if ($('.studio').isInViewport()) {
 
                 $('.studio h2').show().css( {'opacity': 0, 'bottom': '-50px' } )
                 .animate( { 'opacity': '1', 'bottom' : 0 }, 1000 );
 
-                $('.studio').addClass('show-title');
+                studioTitleShowed = 1;
 
             } 
         }
 
         /* Check if clouds have mouved if not we mouve them */
-        if (!$('.place').hasClass('clouds-mouved')) {
+        if (!cloudMoved) {
             if ($('.place').isInViewport()) {
 
                 $('.clouds').show().animate( { 'left' : '550px' }, 4000 );
 
-                $('.place').addClass('clouds-mouved');
+                cloudMoved = 1;
 
             } 
         }
@@ -140,7 +108,6 @@
     $('.menu-toggle').on('click', function (e){
 
         e.stopPropagation();
-
 
         var ariaExpanded = $(this).attr('aria-expanded');
         
