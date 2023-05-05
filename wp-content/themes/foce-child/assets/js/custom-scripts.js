@@ -3,22 +3,21 @@
     /* When page ready */
     $( document ).ready(function() {
 
-        // Fade in section of the home page when page ready
-        $('.banner').css( {'opacity': 0, 'margin-top': '-100px' } )
-        .animate( { 'opacity': '1', 'margin-top' : 0 }, 1300 );
+       // Fade in section of the home page when page ready
+        $('.banner').css( {'opacity': '0', 'position': 'relative', 'top': '-100px' } )
+        .animate( {'opacity': '1',  'top': '0px' }, 1300 );
 
-        $('.banner img').css( {'opacity': 0, 'bottom': '-80px' } )
+        $('.banner img').css( {'opacity': '0', 'bottom': '-80px' } )
         .animate( { 'opacity': '1', 'bottom' : '160px',  }, 1400 );
 
-        $('main').css( {'position': 'relative', 'opacity': 0, 'bottom': '-55px' } )
+        $('main').css( {'position': 'relative', 'opacity': '0', 'bottom': '-55px' } )
         .animate( { 'opacity': '1', 'bottom' : '0px' }, 1400 );
-
 
         //We init Skrollr for the parralax
         const imageBannerSkrollrData = {
-            "data-0": "opacity:1; position:fixed;bottom: 155px;",
+            "data-0": "opacity:1; position:fixed;bottom: 185px;width:750px",
             "data-228": "",
-            "data-229": "position: absolute; bottom: -65px;",
+            "data-229": "position: absolute; bottom: 1px;width:750px",
             "data-1200": "opacity:0;"
         };
         $('.banner img').attr(imageBannerSkrollrData);
@@ -90,7 +89,7 @@
     });
 
 
-    //Init swiper js
+    //We init swiper js
     const swiper = new Swiper(".swiper-slider", {
 
         // Optional parameters
@@ -98,13 +97,14 @@
         observeParents: true,
         slidesPerView: "2",
         spaceBetween: 10,
+        lazyLoading: true,
         mousewheel: false,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows: true
+            slideShadows: false
         },
         keyboard: {
           enabled: true

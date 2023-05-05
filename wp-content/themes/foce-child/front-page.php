@@ -2,6 +2,7 @@
 
 get_header();
 ?>
+    
     <section id="banner" class="banner">
         
         <video width="1200" height="1000" style="pointer-events: none;" loop autoplay muted>
@@ -69,6 +70,7 @@ get_header();
 
 
     </main><!-- #main -->
+       
 
 <?php
 get_footer();

@@ -20,15 +20,21 @@
         <div class="swiper swiper-slider">
         
             <div class="swiper-wrapper">
-
+                
                 <?php
                 while ( $characters_query->have_posts() ) {
-
                     $characters_query->the_post(); 
-                    echo '<img class="swiper-slide" src="'.wp_get_attachment_url( get_post_thumbnail_id()).'" alt="Swiper">';
+                ?>
+
+                    <div class="swiper-slide character-slide">
+                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id());?>" alt="Swiper">
+                    <p><?php echo the_title();?></p>
+                    </div>
                     
+                <?php                    
                 }
                 ?>
+                
 
             </div>
     
