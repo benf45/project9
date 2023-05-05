@@ -76,6 +76,7 @@
 
         /* Check if clouds have mouved if not we mouve them */
         if (!cloudMoved) {
+
             if ($('.place').isInViewport()) {
 
                 $('.clouds').show().animate( { 'left' : '550px' }, 4000 );
@@ -83,25 +84,34 @@
                 cloudMoved = 1;
 
             } 
+
         }
 
     });
-   
 
-    /* Function to slide character images */
-    var slider = tns({
-        container: '.tinyslider-wrapper',
-        "items": 3,
-        "center": true,
-        "loop": false,
-        "slideBy": "page",
-        "controls": false,
-        "nav": false,
-        "mouseDrag": true,
-        "swipeAngle": false,
-        "speed": 400
+
+    //Init swiper js
+    const swiper = new Swiper(".swiper-slider", {
+
+        // Optional parameters
+        effect: "coverflow",
+        observeParents: true,
+        slidesPerView: "2",
+        spaceBetween: 10,
+        mousewheel: false,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+        },
+        keyboard: {
+          enabled: true
+        },
+
     });
-
+      
   
     
     /* Navigation */
@@ -128,7 +138,7 @@
 
         }else{
 
-            /* Hide the menu */
+            //Hide the menu
             $('.main-navigation ul').hide();
             
             let content= '<span class="line"></span>'+
@@ -140,8 +150,26 @@
         }
         
 
+    });
+
+    /* Click event to hide nav menu when clicking on menu link */
+    $('.main-navigation .menu-link').on('click', function(){
+
+        //Hide the menu
+        $('#site-navigation').removeClass('toggled');
+        $('.menu-toggle').attr('aria-expanded', 'false');
+        $('.main-navigation ul').hide();
+        
+        //Add burger icon to the place of close icon
+        let content= '<span class="line"></span>'+
+        '<span class="line"></span>'+
+        '<span class="line"></span>';
+
+        $('.menu-toggle').html(content);
 
     });
+
+
     
 
 })( jQuery );

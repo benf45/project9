@@ -54,6 +54,7 @@ h2{
     right: 0 !important;
     padding: 0 10px !important;
     top: 18px !important;
+    cursor: pointer !important;
 
 }
 
@@ -303,30 +304,32 @@ h2{
 
 
 /* Story */
+.story  {
+	padding-top: 75px;
+}
 .story > .title-h2::before {
 	content: url("./assets/images/sunflower_leaves.png");
 	position: absolute;
-	left: 0;
-	top: 8em;
+	left: 2em;
+	top: 15em;
 	z-index: -1;
 }
 .story > .title-h2::after {
 	content: url("./assets/images/Sunflower.png");
 	position: absolute;
-	left: 3.0em;
-	top: 26em;
+	left: 4.9em;
+	top: 34em;
 }
-
 
 .story__article::before {
 
-	top: 11em !important;
+	top: 17em !important;
 
 }
 
 .story__article::after {
 
-	top: 5em !important;
+	top: 11em !important;
 }
 
 /*<-----------------*/
@@ -482,73 +485,135 @@ h2{
 
 
 /* Character */
+#characters{
+    padding: 4em 0 2em 0 !important;
+    margin: 5em 0em 0em 0em !important;
+    text-align: left !important;
+}
+
 .main-character{
     
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
 
 }
+.story #characters h3 {
 
+    background-position: 12% 50% !important;
+}
 .main-character h3{
     position: relative;
-    left: -400px !important;
+    text-align: left;
+    padding-left: 12%; 
     
 }
 
-
-.tinyslider-wrapper{
-    width: 2000px !important;
-
+.swiper-container {
+    
+    width: 100% !important;
+    
 }
 
-  .tinyslider-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.swiper-wrapper {
+    width: 100%;
+    
+}
 
+.swiper-slide {
+   
+    width: 450px !important;
+  
+}
+
+.swiper-slider{
+    padding-left: 10%; 
+    width: 100%;
+}
 
 @media (max-width: 1000px){
 
-    .tinyslider-wrapper{
-        width: 1500px !important;
-    
-    } 
-    
     .main-character h3{
-        left: 0 !important;
+
+        padding-left: 16%; 
         
+    }
+    .story #characters h3 {
+
+        background-position: 20% 50% !important;
+    }
+    .swiper-slide {
+   
+        width: 275px !important;
+      
+    }
+    .swiper-slider{
+        padding-left: 13%; 
     }
 
 }
 
-@media (max-width: 792px){
+@media (max-width: 950px){
+    .story > .title-h2::before {
 
-    .tinyslider-wrapper{
-        margin-left: 5% !important;
-    }  
+        left: 1em;
+       
+    }
+    .story > .title-h2::after {
+
+        left: 3.9em;
+       
+    }
+}
+
+@media (max-width: 650px){
+
+    .main-character h3{
+        text-align: center !important;
+        padding-left: 10%; 
+    }
+
+    .story #characters h3 {
+        background-position: 50% 50% !important;
+    }
+    
+    .swiper-slider{
+        padding-left: 2%; 
+    }
+    .swiper-slide {
+   
+        width: 220px !important;
+      
+    }
 
 }
 
+@media (max-width: 440px){
+    #story__article p {
+        margin-bottom: 0em;
+      }
+    #characters{
+        padding: 3em 0 2em 0 !important;
+        margin: 0em !important;
+    }
+    .main-character h3{
+        text-align: center !important;
+        padding-left: 15%; 
+    }
 
-@media (max-width: 600px){
-
-    .tinyslider-wrapper{
-        width: 1200px !important;
-        margin-left: 5% !important;
-    }  
-
-}
-
-@media (max-width: 400px){
-
-    .tinyslider-wrapper{
-        margin-left: 10% !important;
-        width: 900px !important;
-    }  
+    .story #characters h3 {
+        background-position: 50% 50% !important;
+    }
+    
+    .swiper-slider{
+        padding-left: 2%; 
+    }
+    .swiper-slide {
+   
+        width: 160px !important;
+      
+    }
 
 }
 

@@ -14,7 +14,7 @@ get_header();
 
     <main id="primary" class="site-main">
 
-        <section id="#story" class="story">
+        <section id="story" class="story">
            
             <div class="title-h2">
                 <h2>L'histoire</h2>

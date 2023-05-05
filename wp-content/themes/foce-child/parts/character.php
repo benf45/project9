@@ -12,23 +12,30 @@
 ?>
 
 <article id="characters">
+
     <div class="main-character">
         <h3>Les personnages</h3>
-  
-            <div class="tinyslider-wrapper">
+
+        <div class="swiper-container">
+        <div class="swiper swiper-slider">
+        
+            <div class="swiper-wrapper">
+
                 <?php
                 while ( $characters_query->have_posts() ) {
+
                     $characters_query->the_post(); 
-
-                    echo '<div class="tinyslider-slide">';
-                    echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                    echo '</div>';
-
+                    echo '<img class="swiper-slide" src="'.wp_get_attachment_url( get_post_thumbnail_id()).'" alt="Swiper">';
+                    
                 }
                 ?>
+
+            </div>
+    
         </div>
+            </div>
+
     </div>
                 
 </article>
-
 
