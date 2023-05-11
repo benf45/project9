@@ -10,8 +10,8 @@
         $('.banner img').css( {'opacity': '0', 'bottom': '-80px' } )
         .animate( { 'opacity': '1', 'bottom' : '160px',  }, 1400 );
 
-        $('main').css( {'position': 'relative', 'opacity': '0', 'bottom': '-55px' } )
-        .animate( { 'opacity': '1', 'bottom' : '0px' }, 1400 );
+        $('main').css( {'position': 'relative', 'opacity': '0'} )
+        .animate( { 'opacity': '1'}, 1400 );
 
         //We init Skrollr for the parralax
         const imageBannerSkrollrData = {
